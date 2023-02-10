@@ -1,0 +1,13 @@
+1675349514750	Rename package 'introducao'
+1675364416582	Rename type 'AloMundo'
+1675425867722	Copy compilation unit
+1675427549885	Copy compilation unit
+1675427836281	Rename type 'NumerosPrimosModularozado'
+1675428144411	Extract method 'validaQuantidadeDeTestes'
+1675431795842	Extract method 'resultadoToString'
+1675432128574	Extract method 'testaSeEhPrimo'
+1675432284005	Extract local variable 'prompt1'
+1675432297187	Extract local variable 'prompt2'
+1675432466562	Rename method 'recebeQuantidadeDeTestes'
+1675432490249	Rename local variable 'quantidadeDeTestes'
+1675433059619	Rename method 'validaNumero'

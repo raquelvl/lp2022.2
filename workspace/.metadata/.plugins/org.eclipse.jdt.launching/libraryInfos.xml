@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/Users/raquelvigolvinolopes/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_19.0.1.v20221102-1007" version="19.0.1"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home" version="14.0.1"/>
+    <libraryInfo home="/Users/raquelvigolvinolopes/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_19.0.1.v20221102-1007/jre" version="19.0.1"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home" version="12.0.2"/>
+    <libraryInfo home="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" version="1.8.0_361">
+        <bootpath>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/resources.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/rt.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jsse.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jce.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/charsets.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jfr.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/Users/raquelvigolvinolopes/Library/Java/Extensions"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/ext"/>
+            <entry path="/Library/Java/Extensions"/>
+            <entry path="/Network/Library/Java/Extensions"/>
+            <entry path="/System/Library/Java/Extensions"/>
+            <entry path="/usr/lib/java"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+</libraryInfos>

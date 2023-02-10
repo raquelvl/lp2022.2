@@ -1,0 +1,13 @@
+package aula1;
+
+import java.util.Scanner;
+
+public class NumeroEhPrimo {
+
+	public static void main(String[] args) {
+		Scanner leNumeros = new Scanner(System.in);
+		System.out.println("Qual numero voce quer testar? ");
+		return sc.nextInt();
+	}
+	
+}

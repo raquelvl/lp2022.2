@@ -1,0 +1,18 @@
+package aula1;
+
+import java.util.Scanner;
+
+public class NumeroEhPrimo {
+
+	public static void main(String[] args) {
+		int[] primos = {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Qual numero voce quer testar? ");
+		int numero = sc.nextInt();
+		
+		if(numero > 40)
+			System.exit(1);
+		
+	}
+	
+}
