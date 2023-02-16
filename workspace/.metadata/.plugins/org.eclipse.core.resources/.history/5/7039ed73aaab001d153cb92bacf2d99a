@@ -1,0 +1,16 @@
+package sincronas.aula1;
+
+import java.util.Scanner;
+
+public class Primosv0 {
+
+	public static void main(String[] args) {
+		System.out.println("Digite o numero. ");
+
+		int numero = new Scanner(System.in).nextInt();
+		System.out.println("O numero eh " + numero);
+		
+	
+	}
+
+}

@@ -1,0 +1,38 @@
+package sincronas.aula1;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Primosv0 {
+
+	public static void main(String[] args) {
+		
+		final int NUMERO_MAXIMO = 100;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Digite o numero. ");
+
+		int numero = sc.nextInt();
+
+		System.out.println("O numero eh " + numero);
+
+		if (numero == 1 || numero == 2 || numero == 3) {
+			System.out.println("Numero " + numero + " eh primo");
+			System.exit(0);
+		}
+		
+		boolean isPrimo = true;
+		for (int i = 1; i < NUMERO_MAXIMO && i <= numero; i++) {
+			if(numero % i == 0 && numero != i) {
+				isPrimo = false;
+				break;
+			}
+		}
+		
+		String resultado = isPrimo ? " eh primo" : " nao eh primo";
+		
+		System.out.println("O numero " + numero + resultado);
+		sc.close();
+	}
+
+}

@@ -4,4 +4,5 @@
     <fullyQualifiedTypeName name="banco.entidades.ContaSimples"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

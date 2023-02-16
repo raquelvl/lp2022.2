@@ -1,0 +1,47 @@
+package sincronas.aula2;
+
+import java.util.Scanner;
+
+public class Primosv1 {
+
+	public static void main(String[] args) {
+
+		int[] numerosPrimos = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+		String prompt1 = "Qual numero voce quer testar? (numero entre 1 e 40) ";
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println(prompt1);
+
+		int numero = sc.nextInt();
+
+		System.out.println("O numero eh " + numero);
+
+		if (numero == 1 || numero == 2 || numero == 3) {
+			System.out.println("Numero " + numero + " eh primo");
+			System.exit(0);
+		}
+
+		boolean ehPrimo = false;
+		for (int i = 0; i < numerosPrimos.length; i++) {
+			if (numero == numerosPrimos[i]) {
+				ehPrimo = true;
+				break;
+			}
+		}
+		
+		String resultado = ehPrimo ? " eh primo " : " nao eh primo";
+		System.out.println("O numero " + numero + resultado);
+//		for (int i = 2; i < numero; i++) {
+//			if (numero % i == 0) {
+//				System.out.println("Numero " + numero + " nao eh primo");
+//				System.exit(0);
+//			}
+//		}
+//
+//		System.out.println("Numero " + numero + " eh primo");
+
+		sc.close();
+	}
+
+}
