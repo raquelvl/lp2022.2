@@ -1,0 +1,80 @@
+package banco.entidades;
+
+import java.util.Objects;
+
+public abstract class Conta {
+	private long numeroDaConta;
+	private double saldo;
+	private Pessoa titular;
+	private static boolean sucesso = true;
+	private static boolean falha = false;
+
+	public Conta(Pessoa titular) {
+		super();
+		this.titular = titular;
+	}
+
+	public Conta(String nomeTitular, String cpfTitular) {
+		super();
+		numeroDaConta = GeradorDeNumeroDeConta.geraNumero();
+		titular = new Pessoa(nomeTitular, cpfTitular);
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public boolean saca(double valor) {
+		if (valor >= 0 && valor <= saldo) {
+			saldo -= valor;
+			return sucesso;
+		}
+		return falha;
+	}
+
+	public boolean deposita(double valor) {
+		if (valor > 0) {
+			saldo += valor;
+			return sucesso;
+		}
+		return falha;
+	}
+
+	public boolean transfere(double valor, Conta outraConta) {
+		if (saca(valor)) {
+			outraConta.deposita(valor);
+			return sucesso;
+		}
+		return falha;
+	}
+
+	public long getNumeroDaConta() {
+		return numeroDaConta;
+	}
+
+	public Pessoa getTitular() {
+		return titular;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numeroDaConta);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Conta))
+			return false;
+		Conta other = (Conta) obj;
+		return numeroDaConta == other.numeroDaConta;
+	}
+
+	@Override
+	public String toString() {
+		return "Conta [numeroDaConta=" + numeroDaConta + ", saldo=" + saldo + ", titular=" + titular + "]";
+	}
+	
+	
+}

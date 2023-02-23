@@ -6,4 +6,5 @@
  *
  */
 module sincronas {
+	requires banco;
 }

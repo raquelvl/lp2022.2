@@ -1,0 +1,5 @@
+package banco.entidades;
+
+public abstract class Conta {
+
+}

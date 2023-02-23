@@ -2,71 +2,49 @@ package banco.entidades;
 
 import java.util.Objects;
 
-public class ContaSimples {
-	private long numeroDaConta;
-	private double saldo;
-	private String nomeCliente;
-	private String cpfCliente;
-	private static boolean sucesso = true;
-	private static boolean falha = false;
+/**
+ * Classe de conta bancária simples para pessoa física.
+ * @author raquelvl
+ * @author jacquesps
+ * @version 1.0
+ *
+ */
+public class ContaSimples extends Conta {
 
-	public ContaSimples(double saldo, String nomeCliente, String cpfCliente) {
-		super();
-		numeroDaConta = GeradorDeNumeroDeConta.geraNumero();
-		this.saldo = saldo;
-		this.nomeCliente = nomeCliente;
-		this.cpfCliente = cpfCliente;
+	/**
+	 * Cria uma conta simples a partir de uma pessoa titular. 
+	 * O número da conta é gerado automaticamente pelo sistema.
+	 * 
+	 * @param titular O titular (pessoa) da conta.
+	 */
+	public ContaSimples(Pessoa titular) {
+		super(titular);
 	}
 
-	public double getSaldo() {
-		return saldo;
-	}
-
-	public boolean saca(double valor) {
-		if (valor >=0 && valor <= saldo) {
-			saldo -= valor;
-			return sucesso;
-		}
-		return falha;
-	}
-
-	public boolean deposita(double valor) {
-		if(valor>0) {
-			saldo += valor;
-			return sucesso;
-		}
-		return falha;
-	}
-	
-	public boolean transfere(double valor, ContaSimples outraConta) {
-		if(saca(valor))	{
-			outraConta.deposita(valor);
-			return sucesso;
-		}
-		return falha;
-	}
-
-	@Override
-	public String toString() {
-		return "ContaSimples [numeroDaConta=" + numeroDaConta + ", saldo=" + saldo + ", nomeCliente=" + nomeCliente
-				+ "]";
+	/**
+	 * Cria uma conta a partir de um nome e CPF de titular da conta. O número da
+	 * conta é gerado automaticamente pelo sistema.
+	 * 
+	 * @param nomeTitular Nome do titular da conta.
+	 * @param cpfTitular  CPF do titular da conta.
+	 */
+	public ContaSimples(String nomeTitular, String cpfTitular) {
+		super(nomeTitular, cpfTitular);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(numeroDaConta);
+		return Objects.hash(getNumeroDaConta());
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof ContaSimples))
 			return false;
 		ContaSimples other = (ContaSimples) obj;
-		return numeroDaConta == other.numeroDaConta;
+		return getNumeroDaConta() == other.getNumeroDaConta();
 	}
 
 }

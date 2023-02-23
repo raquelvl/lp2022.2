@@ -1,0 +1,32 @@
+package banco.entidades;
+
+import java.util.Objects;
+
+public class ContaSimples extends Conta {
+	private long numeroDaConta;
+
+	public ContaSimples(Pessoa titular) {
+		super(titular);
+	}
+
+	public ContaSimples(String nomeTitular, String cpfTitular) {
+		super(nomeTitular, cpfTitular);
+	}
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numeroDaConta);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof ContaSimples))
+			return false;
+		ContaSimples other = (ContaSimples) obj;
+		return numeroDaConta == other.numeroDaConta;
+	}
+
+}

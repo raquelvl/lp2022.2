@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;outraConta&apos; in &apos;banco.entidades.Conta.transfere(...)&apos; to &apos;contaDestino&apos;&#x0A;- Original project: &apos;banco&apos;&#x0A;- Original element: &apos;banco.entidades.Conta.transfere(double, Conta).outraConta&apos;&#x0A;- Renamed element: &apos;outraConta&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;outraConta&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;banco.entidades{Conta.java[Conta~transfere~D~QConta;@outraConta!2160!2175!2166!2175!QConta;!0!true" name="contaDestino" references="true" stamp="1677178393394" version="1.0"/>
+</session>

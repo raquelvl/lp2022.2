@@ -1,0 +1,5 @@
+package banco.entidades;
+
+public class Pessoa {
+
+}

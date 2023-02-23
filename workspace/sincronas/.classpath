@@ -6,5 +6,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="/Users/raquelvigolvinolopes/Documents/raquel/disciplinas/2022.2/LP/workspace/banco.jar"/>
+	<classpathentry kind="src" path="/banco">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

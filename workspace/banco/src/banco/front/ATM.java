@@ -5,10 +5,10 @@ import banco.entidades.ContaSimples;
 public class ATM {
 
 	public static void main(String[] args) {
-		ContaSimples contaRaquel = new ContaSimples(0, "Raquel Lopes", "000111222-33");
+		ContaSimples contaRaquel = new ContaSimples("Raquel Lopes", "000111222-33");
 		System.out.println(contaRaquel);
 
-		ContaSimples contaMarcus = new ContaSimples(0, "Marcus Carvalho", "444555666-77");
+		ContaSimples contaMarcus = new ContaSimples("Marcus Carvalho", "444555666-77");
 		System.out.println(contaMarcus);
 
 		contaRaquel.saca(10.0);
