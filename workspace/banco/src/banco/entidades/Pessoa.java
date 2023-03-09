@@ -1,92 +1,100 @@
 package banco.entidades;
 
-import java.util.Objects;
+/*
+ * Desenvolvido para a disciplina Programacao 1
+ * Curso de Bacharelado em Ciência da Computação
+ * Departamento de Sistemas e Computação
+ * Universidade Federal da Paraíba
+ *
+ * Copyright (C) 1999 Universidade Federal da Paraíba.
+ * Não redistribuir sem permissão.
+ */
+
+import java.io.*;
 
 /**
  * Classe representando uma pessoa física.
- * @author raquelvl
- * @author jacquesps
  *
+ * @author   Jacques Philippe Sauvé, jacques@dsc.ufpb.br
+ * @version 1.1
+ * <br>
+ * Copyright (C) 1999 Universidade Federal da Paraíba.
  */
-public class Pessoa {
-	private String nome;
-	private String cpf;
 
-	/**
-	 * Cria uma pessoa a partir de seu nome e CPF.
-	 * @param nome	O nome da pessoa física.
-	 * @param cpf	O CPF da pessoa física.
-	 */
-	public Pessoa(String nome, String cpf) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-	}
+public class Pessoa implements Serializable {
+  static final long serialVersionUID = -3961425924658203637L;
+  private String nome;
+  private String cpf;
 
-	/**
-	 * Cria uma pessoa a partir de seu nome.
-	 * @param nome	O nome da pessoa física.
-	 */
-	public Pessoa(String nome) {
-		super();
-		this.nome = nome;
-	}
+  // Construtores
+  /*
+   * Constroi uma pessoa com nome e CPF dados.
+   * @param nome O nome da pessoa.
+   * @param cpf O CPF da pessoa.
+   */
+  public Pessoa(String nome, String cpf) {
+    this.nome = nome;
+    this.cpf = cpf;
+  }
 
-	public Pessoa() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+  /*
+   * Constroi uma pessoa com nome dado e sem CPF.
+   * @param nome O nome da pessoa.
+   */
+  public Pessoa(String nome) {
+    this(nome, "");
+  }
 
-	/**
-	 * Recupera o nome da pessoa.
-	 * @return	O nome da pessoa.
-	 */
-	public String getNome() {
-		return nome;
-	}
+  /**
+   * Recupera o nome da pessoa.
+   * @return O nome da pessoa.
+   */
+  public String getNome() {
+    return nome;
+  }
 
-	/**
-	 * Ajusta o nome da pessoa.
-	 * @param nome	O novo nome a ser ajustado.
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+  /**
+   * Recupera o CPF da pessoa.
+   * @return O CPF associado à pessoa.
+   */
+  public String getCPF() {
+    return cpf;
+  }
 
-	/**
-	 * Recupea o CPF da pessoa.
-	 * @return	O CPF da pessoa.
-	 */
-	public String getCpf() {
-		return cpf;
-	}
+  /**
+   * Ajusta o nome da pessoa.
+   * @param nome O nome da pessoa.
+   */
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-	/**
-	 * Ajusta o CPF da pessoa.
-	 * @param cpf	O novo CPF a ser ajustado.
-	 */
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+  /**
+   * Ajusta o CPF da pessoa.
+   * @param cpf O CPF associado à pessoa.
+   */
+  public void setCPF(String cpf) {
+    this.cpf = cpf;
+  }
 
-	@Override
-	public String toString() {
-		return "Pessoa [nome=" + nome + ", cpf=" + cpf + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(cpf, nome);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Pessoa))
-			return false;
-		Pessoa other = (Pessoa) obj;
-		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
-	}
-
+  /**
+   * Representa a pessoa como string
+   */
+  public String toString() {
+    return "Nome " + nome + ", cpf " + cpf;
+  }
+ 
+  /**
+   * Testa a igualdade de um objeto com esta pessoa.
+   * @param objeto O objeto a comparar com esta pessoa.
+   * @return true se o objeto for igual a esta pessoa, false caso contrário.
+   */
+  public boolean equals(Object objeto) {
+    if(! (objeto instanceof Pessoa)) {
+      return false;
+    }
+    Pessoa outra = (Pessoa)objeto;
+    return getNome().equals(outra.getNome())
+            && getCPF().equals(outra.getCPF());
+  }
 }

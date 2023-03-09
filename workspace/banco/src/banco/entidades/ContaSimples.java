@@ -1,50 +1,49 @@
+/*
+ * Desenvolvido para a disciplina Programacao 1
+ * Curso de Bacharelado em Ciência da Computação
+ * Departamento de Sistemas e Computação
+ * Universidade Federal da Paraíba
+ *
+ * Copyright (C) 1999 Universidade Federal da Paraíba.
+ * Não redistribuir sem permissão.
+ */
 package banco.entidades;
-
-import java.util.Objects;
 
 /**
  * Classe de conta bancária simples para pessoa física.
- * @author raquelvl
- * @author jacquesps
- * @version 1.0
  *
+ * @author   Jacques Philippe Sauvé, jacques@dsc.ufpb.br
+ * @version 1.1
+ * <br>
+ * Copyright (C) 1999 Universidade Federal da Paraíba.
  */
 public class ContaSimples extends Conta {
-
+	// construtores
 	/**
-	 * Cria uma conta simples a partir de uma pessoa titular. 
-	 * O número da conta é gerado automaticamente pelo sistema.
-	 * 
-	 * @param titular O titular (pessoa) da conta.
+	 * Cria uma conta a partir de uma pessoa e número de conta.
+	 * @param titular O titular da conta.
 	 */
 	public ContaSimples(Pessoa titular) {
 		super(titular);
+		Agencia.addTitular(titular);
+		Agencia.addConta(this);
 	}
 
 	/**
-	 * Cria uma conta a partir de um nome e CPF de titular da conta. O número da
-	 * conta é gerado automaticamente pelo sistema.
-	 * 
-	 * @param nomeTitular Nome do titular da conta.
-	 * @param cpfTitular  CPF do titular da conta.
+	 * Cria uma conta a partir de um nome e cpf de pessoa física, e um número de conta.
+	 * @param nome O nome do titular da conta.
+	 * @param cpf O CPF do titular da conta.
 	 */
-	public ContaSimples(String nomeTitular, String cpfTitular) {
-		super(nomeTitular, cpfTitular);
+	/* Este método existe para esconder a classe Pessoa dos principiantes */
+	public ContaSimples(String nome, String cpf) {
+		this(new Pessoa(nome, cpf));
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(getNumeroDaConta());
+	/**
+	 * Transforma os dados da conta em um String.
+	 * @return O string com os dados da conta.
+	 */
+	public String toString() {
+		return "ContaSimples " + super.toString();
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof ContaSimples))
-			return false;
-		ContaSimples other = (ContaSimples) obj;
-		return getNumeroDaConta() == other.getNumeroDaConta();
-	}
-
 }
