@@ -196,9 +196,7 @@ public class Agencia {
       contas = (Map)tudo.get(1);
       movimento = (Movimento)tudo.get(2);
       caixa = localizarConta(0);
-      for(int i = 0; i<contas.size()-1; i++){
-        GeradorDeNumeroDeConta.geraNumero();
-      }
+      GeradorDeNumeroDeConta.setNumero(contas.size()-1);
       in.close();
     } catch(Exception e) {
       System.err.println(e);
