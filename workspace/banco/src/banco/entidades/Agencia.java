@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import banco.excecoes.NaoPodeFecharContaException;
-import banco.entidades.GeradorDeNumeroDeConta
+import banco.entidades.GeradorDeNumeroDeConta;
 
 /**
  * Classe de agência bancária simples.
@@ -196,8 +196,8 @@ public class Agencia {
       contas = (Map)tudo.get(1);
       movimento = (Movimento)tudo.get(2);
       caixa = localizarConta(0);
-      for(int i = 0; i<titulares.size(); i++){
-        GeradorDeNumeroConta.geraNumero();
+      for(int i = 0; i<contas.size()-1; i++){
+        GeradorDeNumeroDeConta.geraNumero();
       }
       in.close();
     } catch(Exception e) {
