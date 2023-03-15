@@ -6,4 +6,8 @@ public class GeradorDeNumeroDeConta {
 	public static long geraNumero() {
 		return num++;
 	}
+	
+	public static void setNumero(long numero){
+		num = numero;
+	}
 }
